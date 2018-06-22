@@ -1,0 +1,21 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+new_course:
+        type: rest
+        resource: App\Controller\TrackingController
+
+courses_post:
+      path: /tracking
+      methods: [POST]
+      defaults:
+         _controller: App\Controller\TrackingController::postTrackingActionStartDate
+         _format: json
+
+courses_put:
+      path: /tracking
+      methods: [PUT]
+      defaults:
+         _controller: App\Controller\TrackingController::putCompleteDate
+         _format: json
